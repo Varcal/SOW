@@ -7,12 +7,12 @@ namespace SOW.Dominio.Entidades
 {
     public sealed class Usuario : Entidade
     {
-        public NomeCompleto Nome { get; set; }
+        public Nome Nome { get; set; }
         public IList<Conta> Contas { get; private set; } = new List<Conta>();
 
 
         private Usuario() { }
-        public Usuario(NomeCompleto nome, Conta conta)
+        public Usuario(Nome nome, Conta conta)
         {
             Nome = nome;
             AdicionarConta(conta);

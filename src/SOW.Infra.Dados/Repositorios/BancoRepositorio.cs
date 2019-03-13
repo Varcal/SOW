@@ -1,4 +1,6 @@
-﻿using SOW.Dominio.Entidades;
+﻿using System.Collections.Generic;
+using System.Linq;
+using SOW.Dominio.Entidades;
 using SOW.Dominio.Repositorios;
 using SOW.Infra.Dados.Contextos;
 using SOW.Infra.Dados.Repositorios.Base;
@@ -15,6 +17,11 @@ namespace SOW.Infra.Dados.Repositorios
         public Banco ObterPorId(int bancoId)
         {
             return EfContext.Bancos.Find(bancoId);
+        }
+
+        public IReadOnlyList<Banco> SelecionarTodos()
+        {
+            return EfContext.Bancos.ToList();
         }
     }
 }

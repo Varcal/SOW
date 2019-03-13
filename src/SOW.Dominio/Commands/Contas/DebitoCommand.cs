@@ -1,4 +1,4 @@
-﻿namespace SOW.Dominio.Commands
+﻿namespace SOW.Dominio.Commands.Contas
 {
     public class DebitoCommand
     {

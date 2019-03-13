@@ -9,10 +9,10 @@ namespace SOW.Dominio.Scopes
         public static bool CriarContaSeValida(this Conta conta)
         {
             return GarantirQue.EstaValido(
-                    ValidarSe.NaoEstaNulo(conta.Numero, "Número da conta é obrigatório"),
+                    ValidarSe.NaoEstaNulo(conta.ContaCorrente, "Número da conta é obrigatório"),
                     ValidarSe.NaoEstaNulo(conta.Banco, "Banco é obrigatório"),
                     ValidarSe.NaoEstaNulo(conta.Saldo, "Saldo é obrigatório"),
-                    ValidarSe.Verdadeiro(conta.Numero.EstaValido(), "Número da conta deve ser válido")
+                    ValidarSe.Verdadeiro(conta.ContaCorrente.EstaValido(), "Número da conta deve ser válido")
                 );
         }
     }

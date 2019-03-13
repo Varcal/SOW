@@ -1,4 +1,6 @@
-﻿using SOW.Dominio.Repositorios.Base;
+﻿using System.Collections.Generic;
+using System.Linq;
+using SOW.Dominio.Repositorios.Base;
 using SOW.Infra.Dados.Contextos;
 using SOW.NucleoCompartilhado.Modelos;
 

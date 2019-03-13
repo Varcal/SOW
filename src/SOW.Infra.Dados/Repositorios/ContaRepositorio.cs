@@ -19,7 +19,7 @@ namespace SOW.Infra.Dados.Repositorios
         {
             return EfContext.Contas
                 .Include(x=>x.Saldo)
-                .Include(x=>x.Numero)
+                .Include(x=>x.ContaCorrente)
                 .FirstOrDefault(x=>x.Id == id);
         }
     }

@@ -1,6 +1,8 @@
-﻿using SOW.Aplicacao.Interfaces;
+﻿using System.Collections.Generic;
+using System.Linq;
+using SOW.Aplicacao.Interfaces;
 using SOW.Aplicacao.Servicos.Base;
-using SOW.Dominio.Commands.Usuarios;
+using SOW.Aplicacao.ViewModels.Usuarios;
 using SOW.Dominio.Entidades;
 using SOW.Dominio.ObjetosDeValor;
 using SOW.Dominio.Repositorios;
@@ -21,17 +23,18 @@ namespace SOW.Aplicacao.Servicos
             _bancoRepositorio = bancoRepositorio;
         }
 
-        public void Registrar(UsuarioCriacaoCommand usuarioCriacaoCommand)
+        public void Registrar(UsuarioRegistrarViewModel usuarioRegistrarViewModel)
         {
-            var usuario = CriarUsuario(usuarioCriacaoCommand);
+            var usuario = CriarUsuario(usuarioRegistrarViewModel);
             _usuarioRepositorio.Adicionar(usuario);
             Save();
         }
 
-        private Usuario CriarUsuario(UsuarioCriacaoCommand usuarioCriacaoCommand)
+   
+        private Usuario CriarUsuario(UsuarioRegistrarViewModel usuarioRegistrarViewModel)
         {
-            var nomeCompleto = new NomeCompleto(usuarioCriacaoCommand.Nome, usuarioCriacaoCommand.Sobrenome);
-            var banco = _bancoRepositorio.ObterPorId(usuarioCriacaoCommand.BancoId);
+            var nomeCompleto = new Nome(usuarioRegistrarViewModel.Nome);
+            var banco = _bancoRepositorio.ObterPorId(usuarioRegistrarViewModel.BancoId);
 
             if (banco == null)
             {
@@ -39,11 +42,17 @@ namespace SOW.Aplicacao.Servicos
                 return null;                              
             }
 
-            var saldo = new Saldo(usuarioCriacaoCommand.SaldoInicial);
+            var saldo = new Saldo(usuarioRegistrarViewModel.SaldoInicial);
             var conta = new Conta(banco, saldo);
 
             var usuario = new Usuario(nomeCompleto, conta);
             return usuario;
+        }
+
+        public IReadOnlyList<UsuarioListViewModel> SelecionarTodos()
+        {
+            var usuarios = _usuarioRepositorio.SelecionarTodos();
+            return usuarios.Select(usuario => new UsuarioListViewModel(usuario)).ToList();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace SOW.Dominio.Entidades
     {
         public int BancoId { get; private set; }
         public Banco Banco { get; private set; }
-        public NumeroConta Numero { get; private set; }
+        public NumeroConta ContaCorrente { get; private set; }
         public Saldo Saldo { get; private set; }
         public int UsuarioId { get; private set; }
 
@@ -19,7 +19,7 @@ namespace SOW.Dominio.Entidades
         public Conta(Banco banco, Saldo saldo)
         {
             Banco = banco;
-            Numero = new NumeroConta(GerarNumeroConta());
+            ContaCorrente = new NumeroConta(GerarNumeroConta());
             Saldo = saldo;
         }
 

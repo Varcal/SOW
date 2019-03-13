@@ -32,8 +32,7 @@ namespace SOW.Infra.Dados.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "varchar(50)", nullable: false),
-                    Sobrenome = table.Column<string>(type: "varchar(100)", nullable: false)
+                    Nome = table.Column<string>(type: "varchar(50)", nullable: false)
                 },
                 constraints: table =>
                 {

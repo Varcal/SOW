@@ -22,6 +22,20 @@ namespace SOW.Dominio.Entidades
         {
             return this.CriarBancoSeValido();
         }
+
+
+
+        public void Alterar(string numero, string nome)
+        {
+            Numero = numero;
+            Nome = nome;
+            EstaValidoParaAltercao();
+        }
+
+        public bool EstaValidoParaAltercao()
+        {
+            return this.EditarBancoSeValido();
+        }
     }
 
 }

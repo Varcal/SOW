@@ -3,21 +3,24 @@ using SOW.NucleoCompartilhado.Modelos;
 
 namespace SOW.Dominio.ObjetosDeValor
 {
-    public sealed class NomeCompleto: ObjetoValor
+    public sealed class Nome: ObjetoValor
     {
-        public string Nome { get; private set; }
-        public string Sobrenome { get; private set; }
+        public string Value { get; private set; }
 
-        public NomeCompleto(string nome, string sobrenome)
+        private Nome()
         {
-            Nome = nome;
-            Sobrenome = sobrenome;
+            
+        }
+
+        public Nome(string nome)
+        {
+            Value = nome;
             EstaValido();
         }
 
         public override string ToString()
         {
-            return $"{Nome} {Sobrenome}";
+            return Value;
         }
 
         public bool EstaValido()

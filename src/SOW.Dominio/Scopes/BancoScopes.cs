@@ -14,5 +14,15 @@ namespace SOW.Dominio.Scopes
                     ValidarSe.NaoEstaVazioOuNulo(banco.Nome, "Nome do banco é obrigatório")
                         );
         }
+
+        public static bool EditarBancoSeValido(this Banco banco)
+        {
+            return GarantirQue.EstaValido(
+                ValidarSe.MaiorQue(0, banco.Id, "Id é obrigatório"),
+                ValidarSe.NaoEstaVazioOuNulo(banco.Numero, "Número do banco é obrigatório"),
+                ValidarSe.SaoIguais(3, banco.Numero.Length, "Número do banco deve conter 3 caracteres"),
+                ValidarSe.NaoEstaVazioOuNulo(banco.Nome, "Nome do banco é obrigatório")
+            );
+        }
     }
 }

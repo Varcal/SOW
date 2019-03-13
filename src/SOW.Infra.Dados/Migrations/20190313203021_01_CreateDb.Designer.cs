@@ -9,7 +9,7 @@ using SOW.Infra.Dados.Contextos;
 namespace SOW.Infra.Dados.Migrations
 {
     [DbContext(typeof(EfContext))]
-    [Migration("20190312215054_01_CreateDb")]
+    [Migration("20190313203021_01_CreateDb")]
     partial class _01_CreateDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -127,21 +127,16 @@ namespace SOW.Infra.Dados.Migrations
 
             modelBuilder.Entity("SOW.Dominio.Entidades.Usuario", b =>
                 {
-                    b.OwnsOne("SOW.Dominio.ObjetosDeValor.NomeCompleto", "Nome", b1 =>
+                    b.OwnsOne("SOW.Dominio.ObjetosDeValor.Nome", "Nome", b1 =>
                         {
                             b1.Property<int>("UsuarioId")
                                 .ValueGeneratedOnAdd()
                                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                            b1.Property<string>("Nome")
+                            b1.Property<string>("Value")
                                 .IsRequired()
                                 .HasColumnName("Nome")
                                 .HasColumnType("varchar(50)");
-
-                            b1.Property<string>("Sobrenome")
-                                .IsRequired()
-                                .HasColumnName("Sobrenome")
-                                .HasColumnType("varchar(100)");
 
                             b1.HasKey("UsuarioId");
 
@@ -149,7 +144,7 @@ namespace SOW.Infra.Dados.Migrations
 
                             b1.HasOne("SOW.Dominio.Entidades.Usuario")
                                 .WithOne("Nome")
-                                .HasForeignKey("SOW.Dominio.ObjetosDeValor.NomeCompleto", "UsuarioId")
+                                .HasForeignKey("SOW.Dominio.ObjetosDeValor.Nome", "UsuarioId")
                                 .OnDelete(DeleteBehavior.Cascade);
                         });
                 });

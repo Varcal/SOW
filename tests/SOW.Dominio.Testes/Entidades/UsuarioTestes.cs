@@ -6,7 +6,7 @@ namespace SOW.Dominio.Testes.Entidades
 {
     public class UsuarioTestes
     {
-        private NomeCompleto _nomeCompleto;
+        private Nome _nome;
         private readonly Saldo _saldo;
         private readonly Banco _banco;
         private Conta _conta;
@@ -14,7 +14,7 @@ namespace SOW.Dominio.Testes.Entidades
 
         public UsuarioTestes()
         {
-            _nomeCompleto = new NomeCompleto("João", "Silva");
+            _nome = new Nome("João");
             _saldo = new Saldo(1000.99M);
             _banco = new Banco("341", "Itáu");
             _conta = new Conta(_banco, _saldo);
@@ -25,10 +25,10 @@ namespace SOW.Dominio.Testes.Entidades
         [Trait("Dominio", nameof(Usuario))]
         public void Deve_criar_um_usuario()
         {          
-           var usuario = new Usuario(_nomeCompleto, _conta);
+           var usuario = new Usuario(_nome, _conta);
 
            Assert.NotNull(usuario);
-           Assert.Equal(_nomeCompleto, usuario.Nome);
+           Assert.Equal(_nome, usuario.Nome);
            Assert.Contains(_conta, usuario.Contas);
            Assert.True(usuario.EstaValido());
         }
@@ -37,9 +37,9 @@ namespace SOW.Dominio.Testes.Entidades
         [Trait("Dominio", nameof(Usuario))]
         public void Nao_deve_criar_um_usuario_sem_nome()
         {
-            _nomeCompleto = null;
+            _nome = null;
 
-            var usuario = new Usuario(_nomeCompleto, _conta);
+            var usuario = new Usuario(_nome, _conta);
 
             Assert.False(usuario.EstaValido());
         }
@@ -50,7 +50,7 @@ namespace SOW.Dominio.Testes.Entidades
         {
             _conta = null;
 
-            var usuario = new Usuario(_nomeCompleto, _conta);
+            var usuario = new Usuario(_nome, _conta);
 
             Assert.False(usuario.EstaValido());
         }

@@ -1,5 +1,5 @@
 ﻿using Moq;
-using SOW.Dominio.Commands;
+using SOW.Dominio.Commands.Contas;
 using SOW.Dominio.Entidades;
 using SOW.Dominio.ObjetosDeValor;
 using SOW.Dominio.Repositorios;

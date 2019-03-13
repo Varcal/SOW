@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movimentações</h1>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <a asp-controller="Movimentacao" asp-action="Debitar">Débito em Conta</a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="Movimentacao" asp-action="Creditar">Crédito em Conta</a>
+    </li>
+    <li class="list-group-item">
+        <a asp-controller="Movimentacao" asp-action="Transferir">Transferência entre Contas</a>
+    </li>
+</ul>
+

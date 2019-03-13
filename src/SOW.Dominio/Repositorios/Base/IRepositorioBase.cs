@@ -1,4 +1,5 @@
-﻿using SOW.NucleoCompartilhado.Modelos;
+﻿using System.Collections.Generic;
+using SOW.NucleoCompartilhado.Modelos;
 
 namespace SOW.Dominio.Repositorios.Base
 {

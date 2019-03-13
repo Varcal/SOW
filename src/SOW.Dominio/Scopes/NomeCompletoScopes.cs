@@ -6,11 +6,10 @@ namespace SOW.Dominio.Scopes
 {
     public static class NomeCompletoScopes
     {
-        public static bool CriarNomeCompletoSeValido(this NomeCompleto nomeCompleto)
+        public static bool CriarNomeCompletoSeValido(this Nome nome)
         {
             return GarantirQue.EstaValido(
-                    ValidarSe.NaoEstaVazioOuNulo(nomeCompleto.Nome, "Nome é obrigatório"),
-                    ValidarSe.NaoEstaVazioOuNulo(nomeCompleto.Sobrenome, "Sobrenome é obrigatório")
+                    ValidarSe.NaoEstaVazioOuNulo(nome.Value, "Nome é obrigatório")
                 );
         }
     }

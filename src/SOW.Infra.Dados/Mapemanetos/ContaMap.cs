@@ -24,7 +24,7 @@ namespace SOW.Infra.Dados.Mapemanetos
                     .IsRequired();
             });
 
-            builder.OwnsOne<NumeroConta>(x => x.Numero, config =>
+            builder.OwnsOne<NumeroConta>(x => x.ContaCorrente, config =>
             {
                 config.Property(x => x.Numero)
                     .HasColumnName("Numero")

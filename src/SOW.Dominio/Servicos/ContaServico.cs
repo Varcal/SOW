@@ -1,4 +1,4 @@
-﻿using SOW.Dominio.Commands;
+﻿using SOW.Dominio.Commands.Contas;
 using SOW.Dominio.Repositorios;
 using SOW.NucleoCompartilhado.DomainEvents.Core;
 using SOW.NucleoCompartilhado.DomainEvents.Notifications;

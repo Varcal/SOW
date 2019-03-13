@@ -15,16 +15,12 @@ namespace SOW.Infra.Dados.Mapemanetos
                 .WithOne()
                 .HasForeignKey(x => x.UsuarioId);
 
-            builder.OwnsOne<NomeCompleto>(p => p.Nome, config =>
+            builder.OwnsOne<Nome>(p => p.Nome, config =>
             {
-                config.Property(x => x.Nome)
+                config.Property(x => x.Value)
                     .HasColumnName("Nome")
                     .HasColumnType("varchar(50)")
-                    .IsRequired();
-                config.Property(x => x.Sobrenome)
-                    .HasColumnName("Sobrenome")
-                    .HasColumnType("varchar(100)")
-                    .IsRequired();
+                    .IsRequired();               
             });
         }
     }

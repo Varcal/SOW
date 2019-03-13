@@ -25,8 +25,8 @@ namespace SOW.Dominio.Testes.Entidades
             Assert.NotNull(conta);
             Assert.Equal(_banco, conta.Banco);
             Assert.Equal(_saldo, conta.Saldo);
-            Assert.NotNull(conta.Numero);
-            Assert.False(string.IsNullOrWhiteSpace(conta.Numero.ToString()));
+            Assert.NotNull(conta.ContaCorrente);
+            Assert.False(string.IsNullOrWhiteSpace(conta.ContaCorrente.ToString()));
             Assert.True(conta.EstaValida());
         }
 
