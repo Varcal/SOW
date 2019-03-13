@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SOW.Dominio\SOW.Dominio.csproj" />
+    <ProjectReference Include="..\SOW.Infra.Dados\SOW.Infra.Dados.csproj" />
+    <ProjectReference Include="..\SOW.NucleoCompartilhado\SOW.NucleoCompartilhado.csproj" />
+  </ItemGroup>
+
+</Project>
