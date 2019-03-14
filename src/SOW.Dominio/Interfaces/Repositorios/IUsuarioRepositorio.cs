@@ -7,5 +7,6 @@ namespace SOW.Dominio.Repositorios
     public interface IUsuarioRepositorio : IRepositorioBase<Usuario>
     {
         IReadOnlyList<Usuario> SelecionarTodos();
+        Conta ObterConta(int usuarioId);
     }
 }

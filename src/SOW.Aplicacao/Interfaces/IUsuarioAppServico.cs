@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SOW.Aplicacao.ApiModels;
 using SOW.Aplicacao.ViewModels.Usuarios;
 
 namespace SOW.Aplicacao.Interfaces
@@ -7,5 +8,6 @@ namespace SOW.Aplicacao.Interfaces
     {
         void Registrar(UsuarioRegistrarViewModel usuarioRegistrarViewModel);
         IReadOnlyList<UsuarioListViewModel> SelecionarTodos();
+        ContaApiModel ObterConta(int usuarioId);
     }
 }

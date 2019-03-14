@@ -1,15 +1,16 @@
 ﻿using SOW.Dominio.Commands.Contas;
+using SOW.Dominio.Interfaces.Servicos;
 using SOW.Dominio.Repositorios;
 using SOW.NucleoCompartilhado.DomainEvents.Core;
 using SOW.NucleoCompartilhado.DomainEvents.Notifications;
 
 namespace SOW.Dominio.Servicos
 {
-    public class ContaServico
+    public class MovimentacaoDominioServico: IMovimentacaoDominioServico
     {
         private readonly IContaRepositorio _contaRepositorio;
 
-        public ContaServico(IContaRepositorio contaRepositorio)
+        public MovimentacaoDominioServico(IContaRepositorio contaRepositorio)
         {
             _contaRepositorio = contaRepositorio;
         }

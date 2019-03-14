@@ -1,0 +1,53 @@
+﻿@model SOW.Aplicacao.ViewModels.Movimentacoes.CreditoViewModel
+
+@{
+    ViewData["Title"] = "Creditar";
+}
+
+<h1>Movimentações</h1>
+
+<h4>Débito</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Creditar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Usuário</label>
+                <select id="usuario" asp-items="@ViewBag.Usuarios" class="form-control">
+                    <option value="">Selecione</option>
+                </select>
+            </div>
+            <div id="conta">
+                <div class="form-group">
+                    <label for="banco" class="control-label">Banco</label>
+                    <input id="banco" class="form-control" readonly />
+                </div>
+                <div class="form-group">
+                    <input id="contaId" asp-for="ContaId" class="form-control" hidden />
+                    <label for="contaNumero" class="control-label">Conta</label>
+                    <input id="contaNumero" class="form-control" readonly />
+                </div>
+                <div class="form-group">
+                    <label for="saldoAtual" class="control-label">Saldo Atual</label>
+                    <input id="saldoAtual" class="form-control" readonly />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Valor" class="control-label"></label>
+                    <input asp-for="Valor" class="form-control" />
+                    <span asp-validation-for="Valor" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Salvar" />
+                    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/movimentacao.js"></script>
+}

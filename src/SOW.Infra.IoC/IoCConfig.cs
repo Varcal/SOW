@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SOW.Aplicacao.Interfaces;
 using SOW.Aplicacao.Servicos;
+using SOW.Dominio.Interfaces.Servicos;
 using SOW.Dominio.Repositorios;
+using SOW.Dominio.Servicos;
 using SOW.Infra.Dados.Contextos;
 using SOW.Infra.Dados.Repositorios;
 using SOW.Infra.Dados.Transacoes;
@@ -25,8 +27,11 @@ namespace SOW.Infra.IoC
             services.AddScoped<IBancoRepositorio, BancoRepositorio>();
             services.AddScoped<IContaRepositorio, ContaRepositorio>();
 
+            services.AddScoped<IMovimentacaoDominioServico, MovimentacaoDominioServico>();
+
             services.AddScoped<IBancoAppServico, BancoAppServico>();
             services.AddScoped<IUsuarioAppServico, UsuarioAppServico>();
+            services.AddScoped<IMovimentacaoAppServico, MovimentacaoAppServico>();
         }
     }
 }

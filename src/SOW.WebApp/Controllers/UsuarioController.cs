@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SOW.Aplicacao.Interfaces;
@@ -61,29 +60,5 @@ namespace SOW.WebApp.Controllers
                 Value = banco.Id.ToString()
             }).ToList();
         }
-
-
-        public ActionResult Editar(int id)
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Editar(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        
     }
 }

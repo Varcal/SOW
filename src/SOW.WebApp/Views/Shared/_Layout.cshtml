@@ -46,7 +46,7 @@
         </nav>
     </header>
     <div class="container">
-        <partial name="_CookieConsentPartial" />
+       
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -54,7 +54,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2019 - SOW.WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; @DateTime.Now.Year - SOW.WebApp 
         </div>
     </footer>
 

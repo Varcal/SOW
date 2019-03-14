@@ -20,5 +20,14 @@ namespace SOW.Infra.Dados.Repositorios
             return EfContext.Usuarios
                 .Include(c=>c.Contas).ThenInclude(b=>b.Banco).ToList();
         }
+
+        public Conta ObterConta(int usuarioId)
+        {
+            return EfContext.Usuarios
+                .Include(x=>x.Contas)
+                .ThenInclude(x=>x.Banco)
+                .FirstOrDefault(x => x.Id == usuarioId)?
+                .Contas.FirstOrDefault();
+        }
     }
 }

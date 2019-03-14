@@ -1,0 +1,99 @@
+﻿@model SOW.Aplicacao.ViewModels.Movimentacoes.TransferenciaViewModel
+
+@{
+    ViewData["Title"] = "Transferência";
+}
+
+<h1>Movimentações</h1>
+
+<h4>Transferência</h4>
+<hr />
+<div class="row">
+
+    <form asp-action="Transferir" class="col-md-12">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <section class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Usuário Débito</label>
+                    <select id="usuarioDebitoSlct" asp-items="@ViewBag.Usuarios" class="form-control">
+                        <option value="">Selecione</option>
+                    </select>
+                </div>
+
+                <div id="usuarioCredito" class="form-group">
+                    <label class="control-label">Usuário Crédito</label>
+                    <select id="usuarioCreditoSlct" asp-items="@ViewBag.Usuarios" class="form-control">
+                        <option value="">Selecione</option>
+                    </select>
+                </div>
+
+                <div id="valor" class="form-group">
+                    <label asp-for="Valor" class="control-label"></label>
+                    <input asp-for="Valor" class="form-control" />
+                    <span asp-validation-for="Valor" class="text-danger"></span>
+                </div>
+            </div>
+
+        </section>
+        <section class="row">
+            <article class="col">
+                <div id="contaDebito" class="card">
+                    <div class="card-header">Conta Débito</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="bancoDebito" class="control-label">Banco</label>
+                            <input id="bancoDebito" class="form-control" readonly />
+                        </div>
+                        <div class="form-group">
+                            <input id="contaDebitoId" asp-for="ContaDebitoId" class="form-control" hidden />
+                            <label for="contaDebitoNumero" class="control-label">Conta</label>
+                            <input id="contaDebitoNumero" class="form-control" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="saldoDebitoAtual" class="control-label">Saldo Atual</label>
+                            <input id="saldoDebitoAtual" class="form-control" readonly />
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="col">
+                <div id="contaCredito" class="card">
+                    <div class="card-header">Conta Crédito</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="bancoCredito" class="control-label">Banco</label>
+                            <input id="bancoCredito" class="form-control" readonly />
+                        </div>
+                        <div class="form-group">
+                            <input id="contaCreditoId" asp-for="ContaCreditoId" class="form-control" hidden />
+                            <label for="contaCreditoNumero" class="control-label">Conta</label>
+                            <input id="contaCreditoNumero" class="form-control" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="saldoCreditoAtual" class="control-label">Saldo Atual</label>
+                            <input id="saldoCreditoAtual" class="form-control" readonly />
+                        </div>
+
+
+                    </div>
+                </div>
+            </article>
+        </section>
+        <br />
+        <div col-md-12>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Salvar" />
+                    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/transferencia.js"></script>
+}

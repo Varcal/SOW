@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using SOW.Aplicacao.ApiModels;
 using SOW.Aplicacao.Interfaces;
 using SOW.Aplicacao.Servicos.Base;
 using SOW.Aplicacao.ViewModels.Usuarios;
@@ -53,6 +54,13 @@ namespace SOW.Aplicacao.Servicos
         {
             var usuarios = _usuarioRepositorio.SelecionarTodos();
             return usuarios.Select(usuario => new UsuarioListViewModel(usuario)).ToList();
+        }
+
+        public ContaApiModel ObterConta(int usuarioId)
+        {
+            var conta = _usuarioRepositorio.ObterConta(usuarioId);
+
+            return conta == null ? null : new ContaApiModel(conta);
         }
     }
 }
