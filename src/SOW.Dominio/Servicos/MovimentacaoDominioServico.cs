@@ -1,6 +1,6 @@
 ﻿using SOW.Dominio.Commands.Contas;
+using SOW.Dominio.Interfaces.Repositorios;
 using SOW.Dominio.Interfaces.Servicos;
-using SOW.Dominio.Repositorios;
 using SOW.NucleoCompartilhado.DomainEvents.Core;
 using SOW.NucleoCompartilhado.DomainEvents.Notifications;
 

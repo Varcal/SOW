@@ -9,9 +9,9 @@ using SOW.Infra.IoC;
 
 namespace SOW.WebApp
 {
-    public class Startup
+    public class StartupWebTests
     {
-        public Startup(IConfiguration configuration)
+        public StartupWebTests(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -30,11 +30,12 @@ namespace SOW.WebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            
+
             services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        [System.Obsolete]
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -45,7 +46,7 @@ namespace SOW.WebApp
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                //app.UseHsts();
             }
 
             app.UseHttpsRedirection();

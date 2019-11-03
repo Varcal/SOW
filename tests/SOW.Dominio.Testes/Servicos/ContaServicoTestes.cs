@@ -1,8 +1,8 @@
 ﻿using Moq;
 using SOW.Dominio.Commands.Contas;
 using SOW.Dominio.Entidades;
+using SOW.Dominio.Interfaces.Repositorios;
 using SOW.Dominio.ObjetosDeValor;
-using SOW.Dominio.Repositorios;
 using SOW.Dominio.Servicos;
 using SOW.Dominio.Testes.Fakes;
 using Xunit;

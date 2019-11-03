@@ -1,4 +1,4 @@
-﻿using SOW.Dominio.Repositorios.Base;
+﻿using SOW.Dominio.Interfaces.Repositorios.Base;
 using SOW.Infra.Dados.Contextos;
 using SOW.NucleoCompartilhado.Modelos;
 

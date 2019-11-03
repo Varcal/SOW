@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using SOW.Dominio.Entidades;
-using SOW.Dominio.Repositorios;
+using SOW.Dominio.Interfaces.Repositorios;
 using SOW.Infra.Dados.Contextos;
 using SOW.Infra.Dados.Repositorios.Base;
 

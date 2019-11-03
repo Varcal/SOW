@@ -5,8 +5,8 @@ using SOW.Aplicacao.Interfaces;
 using SOW.Aplicacao.Servicos.Base;
 using SOW.Aplicacao.ViewModels.Usuarios;
 using SOW.Dominio.Entidades;
+using SOW.Dominio.Interfaces.Repositorios;
 using SOW.Dominio.ObjetosDeValor;
-using SOW.Dominio.Repositorios;
 using SOW.NucleoCompartilhado.DomainEvents.Notifications;
 using SOW.NucleoCompartilhado.Transacacoes;
 

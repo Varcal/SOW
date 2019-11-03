@@ -142,6 +142,7 @@ namespace SOW.NucleoCompartilhado.Validacoes
             tempCpf = tempCpf + digito;
 
             soma = 0;
+
             for (var i = 0; i < 10; i++)
             {
                 soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
@@ -159,6 +160,7 @@ namespace SOW.NucleoCompartilhado.Validacoes
         {
             return (!EhPis(pis)) ? new DomainNotification("GarantirQuePISEstaValido", mensagem) : null;
         }
+
         private static bool EhPis(string pis)
         {
             var multiplicador = new[] { 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };

@@ -4,7 +4,7 @@ using SOW.Aplicacao.Interfaces;
 using SOW.Aplicacao.Servicos.Base;
 using SOW.Aplicacao.ViewModels.Bancos;
 using SOW.Dominio.Entidades;
-using SOW.Dominio.Repositorios;
+using SOW.Dominio.Interfaces.Repositorios;
 using SOW.NucleoCompartilhado.Transacacoes;
 
 namespace SOW.Aplicacao.Servicos
@@ -43,6 +43,7 @@ namespace SOW.Aplicacao.Servicos
             var banco = _bancoRepositorio.ObterPorId(model.Id);
             banco.Alterar(model.Numero, model.Nome);
 
+            _bancoRepositorio.Editar(banco);
             Save();
         }
     }

@@ -1,6 +1,6 @@
 ﻿using SOW.NucleoCompartilhado.Modelos;
 
-namespace SOW.Dominio.Repositorios.Base
+namespace SOW.Dominio.Interfaces.Repositorios.Base
 {
     public interface IRepositorioBase<T> where T: Entidade
     {

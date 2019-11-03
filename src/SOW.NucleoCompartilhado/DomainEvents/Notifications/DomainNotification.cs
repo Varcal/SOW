@@ -18,7 +18,7 @@ namespace SOW.NucleoCompartilhado.DomainEvents.Notifications
 
         public static void CriarNotificacao(string v1, string v2)
         {
-            RaiseEvent(new DomainNotification("BancoNaoEncontrado", "Não foi possível localizar o banco informado."));
+            RaiseEvent(new DomainNotification(v1, v2));
         }
     }
 }

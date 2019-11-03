@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SOW.Aplicacao.Interfaces;
 using SOW.Aplicacao.Servicos;
+using SOW.Dominio.Interfaces.Repositorios;
 using SOW.Dominio.Interfaces.Servicos;
-using SOW.Dominio.Repositorios;
 using SOW.Dominio.Servicos;
 using SOW.Infra.Dados.Contextos;
 using SOW.Infra.Dados.Repositorios;

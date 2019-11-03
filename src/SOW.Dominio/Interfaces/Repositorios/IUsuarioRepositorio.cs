@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using SOW.Dominio.Entidades;
-using SOW.Dominio.Repositorios.Base;
+using SOW.Dominio.Interfaces.Repositorios.Base;
 
-namespace SOW.Dominio.Repositorios
+namespace SOW.Dominio.Interfaces.Repositorios
 {
     public interface IUsuarioRepositorio : IRepositorioBase<Usuario>
     {
